@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity.ModelConfiguration;
 
 namespace EF6CodeFirstDemo
 {
@@ -18,10 +13,9 @@ namespace EF6CodeFirstDemo
             this.Property(s => s.StudentName)
                 .IsConcurrencyToken();
 
-            // Configure a one-to-one relationship between Student & StudentAddress 
+            // Configure a one-to-one relationship between Student & StudentAddress
             this.HasOptional(s => s.Address) // Mark Student.Address property optional (nullable)
-                .WithRequired(ad => ad.Student); // Mark StudentAddress.Student property as required (NotNull). 
-
+                .WithRequired(ad => ad.Student); // Mark StudentAddress.Student property as required (NotNull).
         }
     }
 }

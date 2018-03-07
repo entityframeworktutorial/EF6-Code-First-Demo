@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 
 namespace EF6CodeFirstDemo
 {
@@ -30,6 +25,5 @@ namespace EF6CodeFirstDemo
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<StudentAddress> StudentAddresses { get; set; }
-
     }
 }

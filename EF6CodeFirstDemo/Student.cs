@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EF6CodeFirstDemo
 {
@@ -18,6 +14,7 @@ namespace EF6CodeFirstDemo
 
         //fully defined relationship
         public int? GradeId { get; set; }
+
         public virtual Grade Grade { get; set; }
 
         public virtual StudentAddress Address { get; set; }
