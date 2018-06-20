@@ -51,6 +51,12 @@
   <ItemGroup>
     <Compile Include="Course.cs" />
     <Compile Include="Grade.cs" />
+    <Compile Include="Migrations\201806202013427_First.cs" />
+    <Compile Include="Migrations\201806202013427_First.Designer.cs">
+      <DependentUpon>201806202013427_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Obv.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SchoolContext.cs" />
@@ -63,6 +69,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806202013427_First.resx">
+      <DependentUpon>201806202013427_First.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
