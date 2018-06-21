@@ -49,14 +49,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Grade.cs" />
     <Compile Include="Migrations\201806202013427_First.cs" />
     <Compile Include="Migrations\201806202013427_First.Designer.cs">
       <DependentUpon>201806202013427_First.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806211853359_Second.cs" />
+    <Compile Include="Migrations\201806211853359_Second.Designer.cs">
+      <DependentUpon>201806211853359_Second.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Obv.cs" />
+    <Compile Include="ObvItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SchoolContext.cs" />
@@ -65,6 +71,7 @@
     <Compile Include="StudentAddress.cs" />
     <Compile Include="StudentConfigurations.cs" />
     <Compile Include="Teacher.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -73,6 +80,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806202013427_First.resx">
       <DependentUpon>201806202013427_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806211853359_Second.resx">
+      <DependentUpon>201806211853359_Second.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

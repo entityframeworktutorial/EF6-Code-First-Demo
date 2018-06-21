@@ -1,4 +1,6 @@
-﻿namespace EF6CodeFirstDemo
+﻿using System.Collections.Generic;
+
+namespace EF6CodeFirstDemo
 {
     public class Obv
     {
@@ -7,5 +9,7 @@
         public int Cislo { get; set; }
 
         public string Popis { get; set; }
+
+        public ICollection<ObvItem> Items { get; set; }
     }
 }

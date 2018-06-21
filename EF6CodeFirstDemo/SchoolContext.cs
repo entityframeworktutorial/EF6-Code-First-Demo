@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure.Annotations;
 
 namespace EF6CodeFirstDemo
 {
@@ -26,6 +28,34 @@ namespace EF6CodeFirstDemo
 
             modelBuilder.Entity<Obv>()
                 .HasKey(obv => new {obv.Typ, obv.Rok, obv.Cislo});
+
+            modelBuilder.Entity<ObvItem>()
+                .HasKey(obvItm => new {obvItm.Typ, obvItm.Rok, obvItm.Cislo, obvItm.Poradi})
+                .HasRequired(obv => obv.Obv)
+                .WithMany(obvItm => obvItm.Items)
+                .HasForeignKey(oItm => new {oItm.Typ, oItm.Rok, oItm.Cislo});
+
+            modelBuilder.Entity<User>()
+                .Property(u => u.UserName)
+                .HasMaxLength(100)
+                .IsRequired();
+
+            modelBuilder.Entity<User>()
+                .HasKey(u => u.Id)
+                .HasIndex(u => u.UserName)
+                .IsUnique();
+
+            modelBuilder.Entity<Car>()
+                .Property(c => c.Spz)
+                .HasMaxLength(30)
+                .IsRequired()
+                .HasColumnAnnotation(
+                    IndexAnnotation.AnnotationName,
+                    new IndexAnnotation(
+                        new IndexAttribute("IX_Cars_Spz", 1) {IsUnique = true}
+                    )
+                );
+
         }
 
         public DbSet<Student> Students { get; set; }
@@ -33,5 +63,8 @@ namespace EF6CodeFirstDemo
         public DbSet<Course> Courses { get; set; }
         public DbSet<StudentAddress> StudentAddresses { get; set; }
         public DbSet<Obv> Obvs { get; set; }
+        public DbSet<ObvItem> ObvItems { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Car> Cars { get; set; }
     }
 }

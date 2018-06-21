@@ -10,6 +10,7 @@ namespace EF6CodeFirstDemo.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             ContextKey = "EF6CodeFirstDemo.SchoolContext";
         }
 
